@@ -21,7 +21,13 @@ const mainDir = ".";
 let README = readdirSync(mainDir).includes("readme.md")
   ? "readme.md"
   : "README.md";
+const replaceLanguagePlaceholder = (template, lang) => {
+  return template.replace(/\$\{lang\}/g, lang);
+};
+
 const lang = core.getInput("LANG") || "zh-CN";
+const outputDir = core.getInput("OUTPUT_DIR") || ".";
+const outputFile = core.getInput("OUTPUT_FILE") || "README.${lang}.md";
 const readme = readFileSync(join(mainDir, README), { encoding: "utf8" });
 const readmeAST = toAst(readme);
 console.log("AST CREATED AND READ");
@@ -42,7 +48,7 @@ const translatedText = originalText.map(async (text) => {
 async function writeToFile() {
   await Promise.all(translatedText);
   writeFileSync(
-    join(mainDir, `README.${lang}.md`),
+    join(outputDir, replaceLanguagePlaceholder(outputFile, lang)),
     toMarkdown(readmeAST),
     "utf8"
   );
