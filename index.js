@@ -49,12 +49,13 @@ const translatedText = originalText.map(async (text) => {
 
 async function writeToFile() {
     await Promise.all(translatedText);
+    const path = join(outputDir, replaceLanguagePlaceholder(outputFile, lang))
     writeFileSync(
-        join(outputDir, replaceLanguagePlaceholder(outputFile, lang)),
+        path,
         toMarkdown(readmeAST),
         "utf8"
     );
-    console.log(`README.${lang}.md written`);
+    console.log(`${path} written`);
 }
 
 async function commitChanges(lang) {

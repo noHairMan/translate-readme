@@ -39,10 +39,14 @@ jobs:
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-CN
+          OUTPUT_DIR: "docs"
+          OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-TW
+          OUTPUT_DIR: "."
+          OUTPUT_FILE: "README.${lang}.md"
       - name: Adding README - Hindi
         uses: dephraiim/translate-readme@main
         with:
@@ -56,7 +60,7 @@ jobs:
         with:
           LANG: fr
 ```
-
+i have not been HS alse
 ## Configuration
 
 ### Options
@@ -65,6 +69,10 @@ You can configure the action further with the following options:
 
 - `LANG`: The language you want to translate your readme to. The default is Simplified Chinese. (I'm a Ghanaian) The supported languages can be found below.
   (default: `zh-CH`) (required: `false`)
+
+- `OUTPUT_DIR`: The directory where you want to save the translated readme. The default is the root directory. (default: `.`) (required: `false`)
+
+- `OUTPUT_FILE`: The name of the translated readme. The default is `README.${lang}.md`. (default: `README.${lang}.md`) (required: `false`)`
 
 ## Supported Languages
 
