@@ -13,7 +13,7 @@
 
 这是一个 GitHub Action，可自动将存储库中的自述文件翻译为指定语言。
 
-_提交给[DEV: GitHub Actions For Open Source!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)黑客马拉松_
+_提交给[DEV：开源的 GitHub 行动！](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)黑客马拉松_
 
 ## 设置
 
@@ -67,7 +67,7 @@ jobs:
 
 ## 配置
 
-### 选项
+### Options
 
 您可以使用以下选项进一步配置操作：
 
@@ -76,7 +76,7 @@ jobs:
 
 -   `OUTPUT_DIR`：要保存翻译后的自述文件的目录。默认为根目录。 （默认：`.`） （必需的：`false`)
 
--   `OUTPUT_FILE`: The name of the translated readme. The default is `README.${lang}.md`。 （默认：`README.${lang}.md`） （必需的：`false`)\`
+-   `OUTPUT_FILE`：翻译后的自述文件的名称。默认为`README.${lang}.md`。 （默认：`README.${lang}.md`） （必需的：`false`)\`
 
 ## 支持的语言
 
@@ -84,7 +84,7 @@ jobs:
 
 ### 问题
 
-查看[这里](https://github.com/dephraiim/translate-readme/issues/1)对于与此操作相关的问题。
+查看[这里](https://github.com/dephraiim/translate-readme/issues/1) for issues related to this action.
 
 ### 发展
 
