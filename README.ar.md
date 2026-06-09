@@ -1,23 +1,23 @@
 # ترجمة الإجراء التمهيدي
 
-## README الترجمة
+## اقرأني الترجمة
 
 -   [إنجليزي](README.md)
 -   [الصينية المبسطة](README.zh-CN.md)
 -   [الصينية التقليدية](README.zh-TW.md)
--   [هندي](README.hi.md)
+-   [الهندية](README.hi.md)
 -   [فرنسي](README.fr.md)
 -   [عربى](README.ar.md)
 
-**GitHub Action لترجمة الملف التمهيدي إلى أي لغة**
+**إجراء GitHub لترجمة الملف التمهيدي إلى أي لغة**
 
-هذا إجراء GitHub يقوم تلقائيًا بترجمة الملف التمهيدي في الريبو الخاص بك إلى لغة محددة.
+هذا هو إجراء GitHub الذي يقوم تلقائيًا بترجمة الملف التمهيدي في الريبو الخاص بك إلى لغة محددة.
 
-_تقديم ل[DEV: إجراءات جيثب للمصدر المفتوح!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)هاكاثون_
+_تقديم ل[DEV: إجراءات GitHub للمصدر المفتوح!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn) hackathon_
 
-## اقامة
+## يثبت
 
-1.  **أضف ملف سير عمل**لمشروعك (على سبيل المثال`.github/workflows/readme.yml`):
+1.  **إضافة ملف سير العمل**لمشروعك (على سبيل المثال`.github/workflows/readme.yml`):
 
 ```yaml
 name: Translate README
@@ -41,10 +41,14 @@ jobs:
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-CN
+          OUTPUT_DIR: "docs"
+          OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-TW
+          OUTPUT_DIR: "."
+          OUTPUT_FILE: "README.${lang}.md"
       - name: Adding README - Hindi
         uses: dephraiim/translate-readme@main
         with:
@@ -59,18 +63,24 @@ jobs:
           LANG: fr
 ```
 
-## ترتيب
+لم أكن HS alse
+
+## إعدادات
 
 ### خيارات
 
 يمكنك تكوين الإجراء بشكل أكبر باستخدام الخيارات التالية:
 
--   `LANG`: The language you want to translate your readme to. The default is Simplified Chinese. (I'm a Ghanaian) The supported languages can be found below.
-    (default: `zh-CH`) (مطلوب:`false`)
+-   `LANG`: اللغة التي تريد ترجمة الملف التمهيدي إليها. الافتراضي هو الصينية المبسطة. (أنا غاني) يمكن العثور على اللغات المدعومة أدناه.
+    (تقصير:`zh-CH`) (مطلوب:`false`)
 
-## اللغات المعتمدة
+-   `OUTPUT_DIR`: الدليل الذي تريد حفظ الملف التمهيدي المترجم فيه. الافتراضي هو الدليل الجذر. (تقصير:`.`) (مطلوب:`false`)
 
-يمكن العثور على اللغات المدعومة هنا[هتبس://كلود.جوجل.كوم/ترانسلت/دكس/لانججس](https://cloud.google.com/translate/docs/languages)
+-   `OUTPUT_FILE`: اسم الملف التمهيدي المترجم. الافتراضي هو`README.${lang}.md`. (تقصير:`README.${lang}.md`) (مطلوب:`false`)\`
+
+## اللغات المدعومة
+
+اللغات المدعومة يمكن العثور عليها هنا<https://cloud.google.com/translate/docs/languages>
 
 ### مشاكل
 
@@ -78,7 +88,7 @@ jobs:
 
 ### تطوير
 
-الاقتراحات والمساهمات مرحب بها دائمًا!
+الاقتراحات والمساهمات هي موضع ترحيب دائما!
 
 ### رخصة
 
