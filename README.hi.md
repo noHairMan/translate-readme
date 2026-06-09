@@ -11,7 +11,7 @@
 
 **रीडमी को किसी भी भाषा में अनुवाद करने के लिए GitHub एक्शन**
 
-यह एक GitHub क्रिया है जो स्वचालित रूप से आपके रेपो में रीडमी को एक निर्दिष्ट भाषा में अनुवादित करती है।
+This is a GitHub Action that automatically translate the readme in your repo to a specified language.
 
 _के लिए एक सबमिशन[DEV: ओपन सोर्स के लिए GitHub क्रियाएँ!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)आयोजित हैकथॉन_
 
