@@ -52865,8 +52865,11 @@ async function commitChanges(lang) {
         "user.email",
         "41898282+github-actions[bot]@users.noreply.github.com"
     );
+    const repo = process.env.GITHUB_REPOSITORY
+        ? `https://github.com/${process.env.GITHUB_REPOSITORY}`
+        : "https://github.com/dephraiim/translate-readme";
     await git.commit(
-        `docs: Added README."${lang}".md translation via https://github.com/dephraiim/translate-readme`
+        `docs: Added README."${lang}".md translation via ${repo}`
     );
     console.log("finished commit");
     await git.push();
