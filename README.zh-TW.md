@@ -74,13 +74,13 @@ jobs:
 -   `LANG`：您要將自述文件翻譯成的語言。預設為簡體中文。 （我是加納人）支持的語言可以在下面找到。
     (預設:`zh-CH`） （必需的：`false`)
 
--   `OUTPUT_DIR`：要保存翻译后的自述文件的目录。預設為根目錄。 (預設:`.`） （必需的：`false`)
+-   `OUTPUT_DIR`：要儲存翻譯後的自述文件的目錄。預設為根目錄。 (預設:`.`） （必需的：`false`)
 
 -   `OUTPUT_FILE`：翻譯後的自述文件的名稱。預設為`README.${lang}.md`。 (預設:`README.${lang}.md`） （必需的：`false`)\`
 
 ## 支援的語言
 
-Languages supported can be found here <https://cloud.google.com/translate/docs/languages>
+可以在此處找到支援的語言<https://cloud.google.com/translate/docs/languages>
 
 ### 問題
 
@@ -88,7 +88,7 @@ Languages supported can be found here <https://cloud.google.com/translate/docs/l
 
 ### 發展
 
-Suggestions and contributions are always welcome!
+隨時歡迎提出建議和貢獻！
 
 ### 執照
 
