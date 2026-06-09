@@ -13,7 +13,7 @@
 
 Il s'agit d'une action GitHub qui traduit automatiquement le fichier Lisez-moi de votre dépôt dans une langue spécifiée.
 
-_A submission for the [DEV : Actions GitHub pour l'Open Source !](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)hackathon_
+_Une soumission pour le[DEV : Actions GitHub pour l'Open Source !](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)hackathon_
 
 ## Installation
 
@@ -71,8 +71,8 @@ je n'ai pas été HS non plus
 
 Vous pouvez configurer davantage l'action avec les options suivantes :
 
--   `LANG`: The language you want to translate your readme to. The default is Simplified Chinese. (I'm a Ghanaian) The supported languages can be found below.
-    (default: `zh-CH`) (requis:`false`)
+-   `LANG`: La langue dans laquelle vous souhaitez traduire votre fichier Lisez-moi. La valeur par défaut est le chinois simplifié. (Je suis ghanéen) Les langues prises en charge se trouvent ci-dessous.
+    (défaut:`zh-CH`) (requis:`false`)
 
 -   `OUTPUT_DIR`: Le répertoire dans lequel vous souhaitez enregistrer le fichier readme traduit. La valeur par défaut est le répertoire racine. (défaut:`.`) (requis:`false`)
 
