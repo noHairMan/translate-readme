@@ -1,23 +1,23 @@
 # रीडमी एक्शन का अनुवाद करें
 
-## रीडमे अनुवाद
+## रीडमी अनुवाद
 
 -   [अंग्रेज़ी](README.md)
 -   [सरलीकृत चीनी](README.zh-CN.md)
 -   [परंपरागत चीनी](README.zh-TW.md)
 -   [हिंदी](README.hi.md)
--   [फ्रेंच](README.fr.md)
+-   [फ़्रेंच](README.fr.md)
 -   [अरब](README.ar.md)
 
-**रीडमी का किसी भी भाषा में अनुवाद करने के लिए गिटहब एक्शन**
+**रीडमी को किसी भी भाषा में अनुवाद करने के लिए GitHub एक्शन**
 
-यह एक गिटहब एक्शन है जो आपके रेपो में रीडमी को एक निर्दिष्ट भाषा में स्वचालित रूप से अनुवादित करता है।
+यह एक GitHub क्रिया है जो स्वचालित रूप से आपके रेपो में रीडमी को एक निर्दिष्ट भाषा में अनुवादित करती है।
 
-_के लिए एक सबमिशन[DEV: ओपन सोर्स के लिए गिटहब एक्शन!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)आयोजित हैकथॉन_
+_के लिए एक सबमिशन[DEV: ओपन सोर्स के लिए GitHub क्रियाएँ!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)आयोजित हैकथॉन_
 
 ## स्थापित करना
 
-1.  **कार्यप्रवाह फ़ाइल जोड़ें**आपकी परियोजना के लिए (उदा।`.github/workflows/readme.yml`):
+1.  **वर्कफ़्लो फ़ाइल जोड़ें**आपके प्रोजेक्ट के लिए (उदा.`.github/workflows/readme.yml`):
 
 ```yaml
 name: Translate README
@@ -41,10 +41,14 @@ jobs:
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-CN
+          OUTPUT_DIR: "docs"
+          OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-TW
+          OUTPUT_DIR: "."
+          OUTPUT_FILE: "README.${lang}.md"
       - name: Adding README - Hindi
         uses: dephraiim/translate-readme@main
         with:
@@ -59,22 +63,28 @@ jobs:
           LANG: fr
 ```
 
+मैं भी एचएस नहीं रहा हूं
+
 ## विन्यास
 
 ### विकल्प
 
-आप निम्न विकल्पों के साथ कार्रवाई को और कॉन्फ़िगर कर सकते हैं:
+आप निम्नलिखित विकल्पों के साथ कार्रवाई को आगे कॉन्फ़िगर कर सकते हैं:
 
--   `LANG`: The language you want to translate your readme to. The default is Simplified Chinese. (I'm a Ghanaian) The supported languages can be found below.
-    (default: `zh-CH`) (आवश्यक:`false`)
+-   `LANG`: वह भाषा जिसमें आप अपने रीडमी का अनुवाद करना चाहते हैं। डिफ़ॉल्ट सरलीकृत चीनी है. (मैं घाना का निवासी हूं) समर्थित भाषाएं नीचे पाई जा सकती हैं।
+    (गलती करना:`zh-CH`) (आवश्यक:`false`)
+
+-   `OUTPUT_DIR`: वह निर्देशिका जहां आप अनुवादित रीडमी को सहेजना चाहते हैं। डिफ़ॉल्ट रूट निर्देशिका है. (गलती करना:`.`) (आवश्यक:`false`)
+
+-   `OUTPUT_FILE`: अनुवादित रीडमी का नाम. डिफ़ॉल्ट है`README.${lang}.md`. (गलती करना:`README.${lang}.md`) (आवश्यक:`false`)\`
 
 ## समर्थित भाषाएँ
 
-समर्थित भाषाएँ यहाँ पाई जा सकती हैं[हत्तपः://क्लाउड.गूगल.कॉम/ट्रांसलेट/डॉक्स/लैंग्वेजेज](https://cloud.google.com/translate/docs/languages)
+समर्थित भाषाएँ यहाँ पाई जा सकती हैं<https://cloud.google.com/translate/docs/languages>
 
-### मुद्दे
+### समस्याएँ
 
-जांच[यहां](https://github.com/dephraiim/translate-readme/issues/1)इस कार्रवाई से संबंधित मुद्दों के लिए।
+जाँच करना[यहाँ](https://github.com/dephraiim/translate-readme/issues/1)इस कार्रवाई से संबंधित मुद्दों के लिए.
 
 ### विकास
 
