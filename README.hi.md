@@ -11,7 +11,7 @@
 
 **रीडमी को किसी भी भाषा में अनुवाद करने के लिए GitHub एक्शन**
 
-This is a GitHub Action that automatically translate the readme in your repo to a specified language.
+यह एक GitHub क्रिया है जो स्वचालित रूप से आपके रेपो में रीडमी को एक निर्दिष्ट भाषा में अनुवादित करती है।
 
 _के लिए एक सबमिशन[DEV: ओपन सोर्स के लिए GitHub क्रियाएँ!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)आयोजित हैकथॉन_
 
@@ -76,7 +76,7 @@ jobs:
 
 -   `OUTPUT_DIR`: वह निर्देशिका जहां आप अनुवादित रीडमी को सहेजना चाहते हैं। डिफ़ॉल्ट रूट निर्देशिका है. (गलती करना:`.`) (आवश्यक:`false`)
 
--   `OUTPUT_FILE`: अनुवादित रीडमी का नाम. डिफ़ॉल्ट है`README.${lang}.md`. (गलती करना:`README.${lang}.md`) (आवश्यक:`false`)\`
+-   `OUTPUT_FILE`: The name of the translated readme. The default is `README.${lang}.md`. (गलती करना:`README.${lang}.md`) (आवश्यक:`false`)\`
 
 ## समर्थित भाषाएँ
 
