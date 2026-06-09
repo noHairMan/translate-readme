@@ -80,7 +80,7 @@ Vous pouvez configurer davantage l'action avec les options suivantes :
 
 ## Langues prises en charge
 
-Les langues prises en charge peuvent être trouvées ici<https://cloud.google.com/translate/docs/languages>
+Languages supported can be found here <https://cloud.google.com/translate/docs/languages>
 
 ### Problèmes
 
