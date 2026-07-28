@@ -11,7 +11,7 @@
 
 **GitHub Action 將自述文件翻譯成任何語言**
 
-這是一個 GitHub Action，可自動將儲存庫中的自述文件翻譯為指定語言。
+This is a GitHub Action that automatically translate the readme in your repo to a specified language.
 
 _提交給[DEV：開源的 GitHub 行動！](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)黑客松_
 
