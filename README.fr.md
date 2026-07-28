@@ -1,6 +1,6 @@
 # Traduire l’action Lisez-moi
 
-## Traduction du fichier README
+## README Translation
 
 -   [Anglais](README.md)
 -   [Chinois simplifié](README.zh-CN.md)
@@ -41,6 +41,7 @@ jobs:
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-CN
+          README_PATH: "docs/README.md"
           OUTPUT_DIR: "docs"
           OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
@@ -78,9 +79,11 @@ Vous pouvez configurer davantage l'action avec les options suivantes :
 
 -   `OUTPUT_FILE`: Le nom du fichier readme traduit. La valeur par défaut est`README.${lang}.md`. (défaut:`README.${lang}.md`) (requis:`false`)\`
 
+-   `README_PATH`: Le chemin d'accès au fichier README, ou à un répertoire contenant`readme.md`ou`README.md`. La valeur par défaut est la racine du référentiel. (défaut:`.`) (requis:`false`)
+
 ## Langues prises en charge
 
-Languages supported can be found here <https://cloud.google.com/translate/docs/languages>
+Les langues prises en charge peuvent être trouvées ici<https://cloud.google.com/translate/docs/languages>
 
 ### Problèmes
 
