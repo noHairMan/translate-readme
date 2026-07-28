@@ -39,6 +39,7 @@ jobs:
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-CN
+          README_PATH: "docs/README.md"
           OUTPUT_DIR: "docs"
           OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
@@ -73,6 +74,8 @@ You can configure the action further with the following options:
 - `OUTPUT_DIR`: The directory where you want to save the translated readme. The default is the root directory. (default: `.`) (required: `false`)
 
 - `OUTPUT_FILE`: The name of the translated readme. The default is `README.${lang}.md`. (default: `README.${lang}.md`) (required: `false`)`
+
+- `README_PATH`: The path to the README file, or to a directory containing `readme.md` or `README.md`. The default is the repository root. (default: `.`) (required: `false`)
 
 ## Supported Languages
 

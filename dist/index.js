@@ -52797,7 +52797,7 @@ module.exports = /*#__PURE__*/JSON.parse('["cent","copy","divide","gt","lt","not
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-const { readFileSync, writeFileSync, readdirSync } = __nccwpck_require__(9896);
+const { readFileSync, writeFileSync, readdirSync, statSync } = __nccwpck_require__(9896);
 const { join } = __nccwpck_require__(6928);
 const core = __nccwpck_require__(7484);
 const translate = __nccwpck_require__(4367);
@@ -52816,10 +52816,14 @@ const toMarkdown = (ast) => {
     return unified().use(stringify).stringify(ast);
 };
 
-const mainDir = ".";
-let README = readdirSync(mainDir).includes("readme.md")
-    ? "readme.md"
-    : "README.md";
+const readmePath = core.getInput("README_PATH") || ".";
+const readmeStats = statSync(readmePath);
+const mainDir = readmeStats.isDirectory() ? readmePath : ".";
+const README = readmeStats.isFile()
+    ? readmePath
+    : readdirSync(mainDir).includes("readme.md")
+        ? join(mainDir, "readme.md")
+        : join(mainDir, "README.md");
 const replaceLanguagePlaceholder = (template, lang) => {
     return template.replace(/\$\{lang\}/g, lang);
 };
@@ -52827,7 +52831,7 @@ const replaceLanguagePlaceholder = (template, lang) => {
 const lang = core.getInput("LANG") || "zh-CN";
 const outputDir = core.getInput("OUTPUT_DIR") || ".";
 const outputFile = core.getInput("OUTPUT_FILE") || "README.${lang}.md";
-const readme = readFileSync(join(mainDir, README), { encoding: "utf8" });
+const readme = readFileSync(README, { encoding: "utf8" });
 const readmeAST = toAst(readme);
 console.log("AST CREATED AND READ");
 

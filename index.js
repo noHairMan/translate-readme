@@ -1,4 +1,4 @@
-const { readFileSync, writeFileSync, readdirSync } = require("fs");
+const { readFileSync, writeFileSync, readdirSync, statSync } = require("fs");
 const { join } = require("path");
 const core = require("@actions/core");
 const translate = require("@iamtraction/google-translate");
@@ -17,10 +17,14 @@ const toMarkdown = (ast) => {
     return unified().use(stringify).stringify(ast);
 };
 
-const mainDir = ".";
-let README = readdirSync(mainDir).includes("readme.md")
-    ? "readme.md"
-    : "README.md";
+const readmePath = core.getInput("README_PATH") || ".";
+const readmeStats = statSync(readmePath);
+const mainDir = readmeStats.isDirectory() ? readmePath : ".";
+const README = readmeStats.isFile()
+    ? readmePath
+    : readdirSync(mainDir).includes("readme.md")
+        ? join(mainDir, "readme.md")
+        : join(mainDir, "README.md");
 const replaceLanguagePlaceholder = (template, lang) => {
     return template.replace(/\$\{lang\}/g, lang);
 };
@@ -28,7 +32,7 @@ const replaceLanguagePlaceholder = (template, lang) => {
 const lang = core.getInput("LANG") || "zh-CN";
 const outputDir = core.getInput("OUTPUT_DIR") || ".";
 const outputFile = core.getInput("OUTPUT_FILE") || "README.${lang}.md";
-const readme = readFileSync(join(mainDir, README), { encoding: "utf8" });
+const readme = readFileSync(README, { encoding: "utf8" });
 const readmeAST = toAst(readme);
 console.log("AST CREATED AND READ");
 

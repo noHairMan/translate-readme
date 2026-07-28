@@ -15,6 +15,10 @@ inputs:
     description: 'The output file you want to save, can use `${lang}` to replace with the language'
     required: false
     default: 'README.${lang}.md'
+  README_PATH:
+    description: 'The path to the README file or directory containing it'
+    required: false
+    default: '.'
 
 
 runs:
