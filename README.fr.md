@@ -31,35 +31,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v6
         with:
-          node-version: 12.x
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18.x
+      
       # ISO Langusge Codes: https://cloud.google.com/translate/docs/languages  
       - name: Adding README - Chinese Simplified
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: zh-CN
           README_PATH: "docs/README.md"
           OUTPUT_DIR: "docs"
           OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: zh-TW
           OUTPUT_DIR: "."
           OUTPUT_FILE: "README.${lang}.md"
       - name: Adding README - Hindi
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: hi
       - name: Adding README - Arabic
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: ar
       - name: Adding README - French
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: fr
 ```
@@ -75,7 +79,7 @@ Vous pouvez configurer davantage l'action avec les options suivantes :
 -   `LANG`: La langue dans laquelle vous souhaitez traduire votre fichier Lisez-moi. La valeur par défaut est le chinois simplifié. (Je suis ghanéen) Les langues prises en charge se trouvent ci-dessous.
     (défaut:`zh-CH`) (requis:`false`)
 
--   `OUTPUT_DIR`: The directory where you want to save the translated readme. La valeur par défaut est le répertoire racine. (défaut:`.`) (requis:`false`)
+-   `OUTPUT_DIR`: Le répertoire dans lequel vous souhaitez enregistrer le fichier readme traduit. La valeur par défaut est le répertoire racine. (défaut:`.`) (requis:`false`)
 
 -   `OUTPUT_FILE`: Le nom du fichier readme traduit. La valeur par défaut est`README.${lang}.md`. (défaut:`README.${lang}.md`) (requis:`false`)\`
 
@@ -83,7 +87,7 @@ Vous pouvez configurer davantage l'action avec les options suivantes :
 
 ## Langues prises en charge
 
-Languages supported can be found here <https://cloud.google.com/translate/docs/languages>
+Les langues prises en charge peuvent être trouvées ici<https://cloud.google.com/translate/docs/languages>
 
 ### Problèmes
 
