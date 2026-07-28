@@ -31,35 +31,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v6
         with:
-          node-version: 12.x
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18.x
+      
       # ISO Langusge Codes: https://cloud.google.com/translate/docs/languages  
       - name: Adding README - Chinese Simplified
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: zh-CN
           README_PATH: "docs/README.md"
           OUTPUT_DIR: "docs"
           OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: zh-TW
           OUTPUT_DIR: "."
           OUTPUT_FILE: "README.${lang}.md"
       - name: Adding README - Hindi
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: hi
       - name: Adding README - Arabic
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: ar
       - name: Adding README - French
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: fr
 ```
@@ -77,7 +81,7 @@ jobs:
 
 -   `OUTPUT_DIR`：要保存翻译后的自述文件的目录。默认为根目录。 （默认：`.`） （必需的：`false`)
 
--   `OUTPUT_FILE`: The name of the translated readme. The default is `README.${lang}.md`。 （默认：`README.${lang}.md`） （必需的：`false`)\`
+-   `OUTPUT_FILE`：翻译后的自述文件的名称。默认为`README.${lang}.md`。 （默认：`README.${lang}.md`） （必需的：`false`)\`
 
 -   `README_PATH`：自述文件的路径，或包含以下内容的目录的路径`readme.md`或者`README.md`。默认是存储库根目录。 （默认：`.`） （必需的：`false`)
 
@@ -87,11 +91,11 @@ jobs:
 
 ### 问题
 
-查看[这里](https://github.com/dephraiim/translate-readme/issues/1) for issues related to this action.
+查看[这里](https://github.com/dephraiim/translate-readme/issues/1)对于与此操作相关的问题。
 
 ### 发展
 
-Suggestions and contributions are always welcome!
+随时欢迎提出建议和贡献！
 
 ### 执照
 
