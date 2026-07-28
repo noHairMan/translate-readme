@@ -13,7 +13,7 @@
 
 यह एक GitHub क्रिया है जो स्वचालित रूप से आपके रेपो में रीडमी को एक निर्दिष्ट भाषा में अनुवादित करती है।
 
-_के लिए एक सबमिशन[DEV: ओपन सोर्स के लिए GitHub क्रियाएँ!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)आयोजित हैकथॉन_
+_के लिए एक सबमिशन[DEV: GitHub Actions For Open Source!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)आयोजित हैकथॉन_
 
 ## स्थापित करना
 
