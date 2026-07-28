@@ -11,7 +11,7 @@
 
 **GitHub Action 將自述文件翻譯成任何語言**
 
-This is a GitHub Action that automatically translate the readme in your repo to a specified language.
+這是一個 GitHub Action，可自動將儲存庫中的自述文件翻譯為指定語言。
 
 _提交給[DEV：開源的 GitHub 行動！](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)黑客松_
 
@@ -31,35 +31,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v6
         with:
-          node-version: 12.x
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18.x
+      
       # ISO Langusge Codes: https://cloud.google.com/translate/docs/languages  
       - name: Adding README - Chinese Simplified
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: zh-CN
           README_PATH: "docs/README.md"
           OUTPUT_DIR: "docs"
           OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: zh-TW
           OUTPUT_DIR: "."
           OUTPUT_FILE: "README.${lang}.md"
       - name: Adding README - Hindi
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: hi
       - name: Adding README - Arabic
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: ar
       - name: Adding README - French
-        uses: dephraiim/translate-readme@main
+        uses: noHairMan/translate-readme@main
         with:
           LANG: fr
 ```
