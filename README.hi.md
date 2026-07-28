@@ -41,6 +41,7 @@ jobs:
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-CN
+          README_PATH: "docs/README.md"
           OUTPUT_DIR: "docs"
           OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
@@ -76,7 +77,9 @@ jobs:
 
 -   `OUTPUT_DIR`: वह निर्देशिका जहां आप अनुवादित रीडमी को सहेजना चाहते हैं। डिफ़ॉल्ट रूट निर्देशिका है. (गलती करना:`.`) (आवश्यक:`false`)
 
--   `OUTPUT_FILE`: The name of the translated readme. The default is `README.${lang}.md`. (गलती करना:`README.${lang}.md`) (आवश्यक:`false`)\`
+-   `OUTPUT_FILE`: अनुवादित रीडमी का नाम. डिफ़ॉल्ट है`README.${lang}.md`. (गलती करना:`README.${lang}.md`) (आवश्यक:`false`)\`
+
+-   `README_PATH`: README फ़ाइल का पथ, या किसी निर्देशिका का पथ`readme.md`या`README.md`. डिफ़ॉल्ट रिपॉजिटरी रूट है। (गलती करना:`.`) (आवश्यक:`false`)
 
 ## समर्थित भाषाएँ
 
