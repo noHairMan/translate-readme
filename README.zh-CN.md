@@ -1,19 +1,19 @@
 # 翻译自述文件操作
 
-## README Translation
+## 自述文件翻译
 
 -   [英语](README.md)
 -   [简体中文](README.zh-CN.md)
 -   [繁体中文](README.zh-TW.md)
 -   [印地语](README.hi.md)
 -   [法语](README.fr.md)
--   [عربى](README.ar.md)
+-   [阿拉伯](README.ar.md)
 
 **GitHub Action 将自述文件翻译成任何语言**
 
 这是一个 GitHub Action，可自动将存储库中的自述文件翻译为指定语言。
 
-_提交给[DEV: GitHub Actions For Open Source!](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)黑客马拉松_
+_提交给[DEV：开源的 GitHub 行动！](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn)黑客马拉松_
 
 ## 设置
 
@@ -77,22 +77,22 @@ jobs:
 
 -   `OUTPUT_DIR`：要保存翻译后的自述文件的目录。默认为根目录。 （默认：`.`） （必需的：`false`)
 
--   `OUTPUT_FILE`：翻译后的自述文件的名称。默认为`README.${lang}.md`。 （默认：`README.${lang}.md`） （必需的：`false`)\`
+-   `OUTPUT_FILE`: The name of the translated readme. The default is `README.${lang}.md`。 （默认：`README.${lang}.md`） （必需的：`false`)\`
 
 -   `README_PATH`：自述文件的路径，或包含以下内容的目录的路径`readme.md`或者`README.md`。默认是存储库根目录。 （默认：`.`） （必需的：`false`)
 
 ## 支持的语言
 
-Languages supported can be found here <https://cloud.google.com/translate/docs/languages>
+可以在此处找到支持的语言<https://cloud.google.com/translate/docs/languages>
 
 ### 问题
 
-查看[这里](https://github.com/dephraiim/translate-readme/issues/1)对于与此操作相关的问题。
+查看[这里](https://github.com/dephraiim/translate-readme/issues/1) for issues related to this action.
 
 ### 发展
 
-随时欢迎提出建议和贡献！
+Suggestions and contributions are always welcome!
 
-### LICENSE
+### 执照
 
 [和](./LICENSE)
