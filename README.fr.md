@@ -1,6 +1,6 @@
 # Traduire l’action Lisez-moi
 
-## README Translation
+## Traduction du fichier README
 
 -   [Anglais](README.md)
 -   [Chinois simplifié](README.zh-CN.md)
@@ -75,7 +75,7 @@ Vous pouvez configurer davantage l'action avec les options suivantes :
 -   `LANG`: La langue dans laquelle vous souhaitez traduire votre fichier Lisez-moi. La valeur par défaut est le chinois simplifié. (Je suis ghanéen) Les langues prises en charge se trouvent ci-dessous.
     (défaut:`zh-CH`) (requis:`false`)
 
--   `OUTPUT_DIR`: Le répertoire dans lequel vous souhaitez enregistrer le fichier readme traduit. La valeur par défaut est le répertoire racine. (défaut:`.`) (requis:`false`)
+-   `OUTPUT_DIR`: The directory where you want to save the translated readme. La valeur par défaut est le répertoire racine. (défaut:`.`) (requis:`false`)
 
 -   `OUTPUT_FILE`: Le nom du fichier readme traduit. La valeur par défaut est`README.${lang}.md`. (défaut:`README.${lang}.md`) (requis:`false`)\`
 
@@ -83,7 +83,7 @@ Vous pouvez configurer davantage l'action avec les options suivantes :
 
 ## Langues prises en charge
 
-Les langues prises en charge peuvent être trouvées ici<https://cloud.google.com/translate/docs/languages>
+Languages supported can be found here <https://cloud.google.com/translate/docs/languages>
 
 ### Problèmes
 
