@@ -41,6 +41,7 @@ jobs:
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-CN
+          README_PATH: "docs/README.md"
           OUTPUT_DIR: "docs"
           OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
@@ -77,6 +78,8 @@ jobs:
 -   `OUTPUT_DIR`：要儲存翻譯後的自述文件的目錄。預設為根目錄。 (預設:`.`） （必需的：`false`)
 
 -   `OUTPUT_FILE`：翻譯後的自述文件的名稱。預設為`README.${lang}.md`。 (預設:`README.${lang}.md`） （必需的：`false`)\`
+
+-   `README_PATH`：自述文件的路徑，或包含以下內容的目錄的路徑`readme.md`或者`README.md`。預設是儲存庫根目錄。 (預設:`.`） （必需的：`false`)
 
 ## 支援的語言
 
