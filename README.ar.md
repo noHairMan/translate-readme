@@ -41,6 +41,7 @@ jobs:
         uses: dephraiim/translate-readme@main
         with:
           LANG: zh-CN
+          README_PATH: "docs/README.md"
           OUTPUT_DIR: "docs"
           OUTPUT_FILE: "readme.${lang}.md"
       - name: Adding README - Chinese Traditional
@@ -77,6 +78,8 @@ jobs:
 -   `OUTPUT_DIR`: الدليل الذي تريد حفظ الملف التمهيدي المترجم فيه. الافتراضي هو الدليل الجذر. (تقصير:`.`) (مطلوب:`false`)
 
 -   `OUTPUT_FILE`: اسم الملف التمهيدي المترجم. الافتراضي هو`README.${lang}.md`. (تقصير:`README.${lang}.md`) (مطلوب:`false`)\`
+
+-   `README_PATH`: المسار إلى ملف README، أو إلى دليل يحتوي على`readme.md`أو`README.md`. الافتراضي هو جذر المستودع. (تقصير:`.`) (مطلوب:`false`)
 
 ## اللغات المدعومة
 
